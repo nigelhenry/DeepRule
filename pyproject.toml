@@ -5,9 +5,7 @@ description = "Fork of the DeepRule repo"
 authors = ["nigelheny@gmail.com"]
 
 [tool.poetry.dependencies]
-my-library = { git = "https://github.com/nigelhenry/DeepRule"}
-
-[tool.poetry.dev-dependencies]
+deeprule = { git = "https://github.com/nigelhenry/DeepRule" }
 
 [build-system]
 requires = ["poetry>=1.1.0"]
