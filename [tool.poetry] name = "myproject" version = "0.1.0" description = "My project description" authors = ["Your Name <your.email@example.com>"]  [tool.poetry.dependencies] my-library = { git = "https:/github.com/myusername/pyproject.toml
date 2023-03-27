@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "deeprule"
+version = "0.1.0"
+description = "Fork of the DeepRule repo"
+authors = ["nigelheny@gmail.com"]
+
+[tool.poetry.dependencies]
+my-library = { git = "https://github.com/nigelhenry/DeepRule"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=1.1.0"]
+build-backend = "poetry.masonry.api"
