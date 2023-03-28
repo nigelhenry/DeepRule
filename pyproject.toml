@@ -3,10 +3,3 @@ name = "deeprule"
 version = "0.1.0"
 description = "Fork of the DeepRule repo"
 authors = ["nigelheny@gmail.com"]
-
-[tool.poetry.dependencies]
-deeprule = { git = "https://github.com/nigelhenry/DeepRule" }
-
-[build-system]
-requires = [
-]
