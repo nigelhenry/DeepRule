@@ -8,3 +8,5 @@ authors = ["nigelheny@gmail.com"]
 deeprule = { git = "https://github.com/nigelhenry/DeepRule" }
 
 [build-system]
+requires = [
+]
