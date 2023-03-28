@@ -8,5 +8,3 @@ authors = ["nigelheny@gmail.com"]
 deeprule = { git = "https://github.com/nigelhenry/DeepRule" }
 
 [build-system]
-requires = ["poetry>=1.1.0"]
-build-backend = "poetry.masonry.api"
