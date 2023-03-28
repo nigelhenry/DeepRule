@@ -4,7 +4,5 @@ setup(
     name='deeprule',
     version='0.1',
     package_dir={"DeepRule"},
-    packages=find_packages(),
-    install_requires=[
-    ]
+    packages=find_packages()
 )
