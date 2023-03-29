@@ -9,15 +9,15 @@ import matplotlib
 matplotlib.use("Agg")
 import cv2
 from tqdm import tqdm
-from config import system_configs
-from nnet.py_factory import NetworkFactory
+from .config import system_configs
+from .nnet.py_factory import NetworkFactory
 from db.datasets import datasets
 import importlib
-from RuleGroup.Cls import GroupCls
-from RuleGroup.Bar import GroupBar
-from RuleGroup.LineQuiry import GroupQuiry
-from RuleGroup.LIneMatch import GroupLine
-from RuleGroup.Pie import GroupPie
+from .RuleGroup.Cls import GroupCls
+from .RuleGroup.Bar import GroupBar
+from .RuleGroup.LineQuiry import GroupQuiry
+from .RuleGroup.LIneMatch import GroupLine
+from .RuleGroup.Pie import GroupPie
 import math
 from PIL import Image, ImageDraw, ImageFont
 torch.backends.cudnn.benchmark = False
