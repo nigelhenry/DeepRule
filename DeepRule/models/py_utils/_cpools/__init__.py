@@ -2,8 +2,22 @@ import torch
 
 from torch import nn
 from torch.autograd import Function
-# take 2
-from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
+#from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
+
+import os
+import ctypes
+
+## take 3
+def load_lib(libname):
+    libdir = os.path.dirname(__file__)
+    libpath = os.path.join(libdir, libname)
+#    os.listdir(libpath)
+    return ctypes.cdll.LoadLibrary(libpath)
+
+top_pool = load_lib('top_pool.cpython-36m-x86_64-linux-gnu.so')
+bottom_pool = load_lib('bottom_pool.cpython-36m-x86_64-linux-gnu.so')
+left_pool = load_lib('left_pool.cpython-36m-x86_64-linux-gnu.so')
+right_pool = load_lib('right_pool.cpython-36m-x86_64-linux-gnu.so')
 
 class TopPoolFunction(Function):
     @staticmethod
