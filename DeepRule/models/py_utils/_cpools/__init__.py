@@ -10,7 +10,7 @@ import ctypes
 ## take 3
 def load_lib(libname):
     #libdir = os.path.dirname(__file__)
-    lidir = "."
+    libdir = "."
     libpath = os.path.join(libdir, libname)
 #    os.listdir(libpath)
     return ctypes.cdll.LoadLibrary(libpath)
