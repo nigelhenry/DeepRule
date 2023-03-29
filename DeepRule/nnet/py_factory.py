@@ -3,8 +3,8 @@ import torch
 import importlib
 import torch.nn as nn
 
-from .config import system_configs
-from .models.py_utils.data_parallel import DataParallel
+from ..config import system_configs
+from ..models.py_utils.data_parallel import DataParallel
 
 torch.manual_seed(317)
 
