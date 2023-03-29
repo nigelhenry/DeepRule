@@ -12,7 +12,7 @@ def load_lib(libname):
     #libdir = os.path.dirname(__file__)
     libdir = "."
     libpath = os.path.join(libdir, libname)
-    os.listdir(libdir)
+    print(os.listdir(libdir))
 #    return ctypes.cdll.LoadLibrary(libpath)
 
 top_pool = load_lib('top_pool.cpython-36m-x86_64-linux-gnu.so')
