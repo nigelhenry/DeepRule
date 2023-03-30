@@ -9,12 +9,11 @@ import ctypes
 
 ## take 4
 import os
-os.system("python setup.py build_ext --inplace")
+os.system(os.path.join(os.path.dirname(__file__), "python setup.py build_ext --inplace"))
 
 def load_lib(libname):
     libdir = os.path.dirname(__file__)
     libpath = os.path.join(libdir, libname)
-    temp = os.listdir(libdir)
     return ctypes.cdll.LoadLibrary(libpath)
 
 top_pool = load_lib('top_pool.cpython-36m-x86_64-linux-gnu.so')
