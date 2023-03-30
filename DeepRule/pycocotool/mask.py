@@ -3,6 +3,7 @@ __author__ = 'tsungyi'
 #import ._mask as _mask
 
 def load_lib(libname):
+    import os
     libdir = os.path.dirname(__file__)
     libpath = os.path.join(libdir, libname)
     return ctypes.cdll.LoadLibrary(libpath)
