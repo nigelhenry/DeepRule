@@ -11,7 +11,7 @@ import cv2
 from tqdm import tqdm
 from .config import system_configs
 from .nnet.py_factory import NetworkFactory
-from db.datasets import datasets
+from .db.datasets import datasets
 import importlib
 from .RuleGroup.Cls import GroupCls
 from .RuleGroup.Bar import GroupBar
