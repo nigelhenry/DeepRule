@@ -13,8 +13,6 @@ def load_lib(libname):
     #libdir = os.path.dirname(__file__)
     #libpath = os.path.join(libdir, libname)
     libpath = libname
-    if not os.path.exists(libpath):
-        raise FileNotFoundError(f"{libpath} not found in current directory.")
     return ctypes.cdll.LoadLibrary("./"+libpath)
 
 #from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
