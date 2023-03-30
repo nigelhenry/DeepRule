@@ -1,5 +1,5 @@
 import numpy as np
-from db.base import BASE
+from .base import BASE
 
 class DETECTION(BASE):
     def __init__(self, db_config):
