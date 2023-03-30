@@ -9,8 +9,7 @@ import ctypes
 
 ## take 3
 def load_lib(libname):
-    #libdir = os.path.dirname(__file__)
-    libdir = "."
+    libdir = os.path.dirname(__file__)
     libpath = os.path.join(libdir, libname)
     temp = os.listdir(libdir)
     raise Exception(f"directory contains{temp}")
