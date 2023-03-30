@@ -4,7 +4,7 @@ from torch import nn
 from torch.autograd import Function
 
 import os
-#import ctypes
+import ctypes
 
 libdir = os.path.dirname(__file__)
 os.system(f"python {libdir}/setup.py build_ext --inplace")
@@ -17,12 +17,12 @@ def load_lib(libname):
         raise FileNotFoundError(f"{libpath} not found in current directory.")
     return ctypes.cdll.LoadLibrary("./"+libpath)
 
-from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
+#from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
 
-#top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
-#bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
-#left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
-#right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
+top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
+bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
+left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
+right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
 
 class TopPoolFunction(Function):
     @staticmethod
