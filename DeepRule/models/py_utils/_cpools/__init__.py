@@ -9,7 +9,8 @@ import ctypes
 
 ## take 4
 import os
-os.system(os.path.join(os.path.dirname(__file__), "python setup.py build_ext --inplace"))
+libdir = os.path.dirname(__file__)
+os.system(f"python {libdir}/setup.py build_ext --inplace"))
 
 def load_lib(libname):
     libdir = os.path.dirname(__file__)
