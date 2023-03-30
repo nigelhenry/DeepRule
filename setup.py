@@ -4,5 +4,5 @@ setup(
     name='deeprule',
     version='0.1',
     include_package_data=True,
-    package_data={"_cpools": ["*.so", "*.pkl"]}
+    package_data={"": ["DeepRule/models/py_utils/_cpools/*.  so"]}
 )
