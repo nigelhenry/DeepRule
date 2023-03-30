@@ -1,6 +1,18 @@
 __author__ = 'tsungyi'
 
-import pycocotool._mask as _mask
+#import pycocotool._mask as _mask
+
+import os
+os.system("python setup.py build_ext --inplace")
+
+def load_lib(libname):
+    import os, ctypes
+    libdir = "."
+    libpath = os.path.join(libdir, libname)
+    return ctypes.cdll.LoadLibrary(libpath)
+
+_mask = load_lib("_mask.cpython-37m-x86_64-linux-gnu.so")
+
 # Interface for manipulating masks stored in RLE format.
 #
 # RLE is a simple yet efficient format for storing binary masks. RLE

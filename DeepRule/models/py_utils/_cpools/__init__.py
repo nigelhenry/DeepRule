@@ -7,7 +7,6 @@ from torch.autograd import Function
 import os
 import ctypes
 
-## take 4
 import os
 os.system("python setup.py build_ext --inplace")
 
