@@ -2,20 +2,19 @@ import torch
 
 from torch import nn
 from torch.autograd import Function
+#from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
 
 import os
-import ctypes
-
 libdir = os.path.dirname(__file__)
 os.system(f"python {libdir}/setup.py build_ext --inplace")
 
 def load_lib(libname):
+    import os, ctypes
     #libdir = os.path.dirname(__file__)
-    #libpath = os.path.join(libdir, libname)
-    libpath = libname
+    libdir = "."
+    libpath = os.path.join(libdir, libname)
     return ctypes.cdll.LoadLibrary("./"+libpath)
 
-#from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
 
 top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
 bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
