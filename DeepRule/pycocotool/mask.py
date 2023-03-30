@@ -1,6 +1,14 @@
 __author__ = 'tsungyi'
 
-import ._mask as _mask
+#import ._mask as _mask
+
+def load_lib(libname):
+    libdir = os.path.dirname(__file__)
+    libpath = os.path.join(libdir, libname)
+    return ctypes.cdll.LoadLibrary(libpath)
+
+_mask = load_lib("_mask.cpython-36m-x86_64-linux-gnu.so")
+
 # Interface for manipulating masks stored in RLE format.
 #
 # RLE is a simple yet efficient format for storing binary masks. RLE
