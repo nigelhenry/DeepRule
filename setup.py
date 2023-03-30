@@ -4,5 +4,5 @@ setup(
     name='deeprule',
     version='0.1',
     include_package_data=True,
-    package_data={"mypkg": ["*.so", "*.pkl"]
+    package_data={"mypkg": ["*.so", "*.pkl"]}
 )
