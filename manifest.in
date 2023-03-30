@@ -1,2 +1,2 @@
-include models/py_utils/_cpools/*.so
-include DeepRule/models/py_utils/_cpools/*.so
+include models/py_utils/_cpools/src/*.cpp
+include pycocotool/_mask.cpython-36m-x86_64-linux-gnu.so
