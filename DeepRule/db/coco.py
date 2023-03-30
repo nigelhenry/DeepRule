@@ -6,10 +6,10 @@ import numpy as np
 import pickle
 import copy
 from tqdm import tqdm
-from db.detection import DETECTION
-from config import system_configs
-from pycocotool.coco import COCO
-from pycocotool.cocoeval import COCOeval
+from .detection import DETECTION
+from ..config import system_configs
+from ..pycocotool.coco import COCO
+from ..pycocotool.cocoeval import COCOeval
 
 
 class MSCOCO(DETECTION):

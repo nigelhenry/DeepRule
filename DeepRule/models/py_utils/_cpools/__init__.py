@@ -12,7 +12,8 @@ def load_lib(libname):
     #libdir = os.path.dirname(__file__)
     libdir = "."
     libpath = os.path.join(libdir, libname)
-    print(os.listdir(libdir))
+    temp = os.listdir(libdir)
+    raise Exception(f"directory contains{temp}")
 #    return ctypes.cdll.LoadLibrary(libpath)
 
 top_pool = load_lib('top_pool.cpython-36m-x86_64-linux-gnu.so')
