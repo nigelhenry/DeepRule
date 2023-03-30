@@ -16,7 +16,7 @@ def load_lib(libname):
     libpath = libname
     if not os.path.exists(libpath):
         raise FileNotFoundError(f"{libpath} not found in current directory.")
-    return ctypes.cdll.LoadLibrary(libpath)
+    return ctypes.cdll.LoadLibrary("./"+libpath)
 
 top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
 bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
