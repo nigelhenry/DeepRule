@@ -8,9 +8,9 @@ setup(
     name="cpools",
     ext_modules=[
         CppExtension("top_pool", [libdir+"/src/top_pool.cpp"]),
-        CppExtension("bottom_pool", [libdir+"src/bottom_pool.cpp"]),
-        CppExtension("left_pool", [libdir+"src/left_pool.cpp"]),
-        CppExtension("right_pool", [libdir+"src/right_pool.cpp"])
+        CppExtension("bottom_pool", [libdir+"/src/bottom_pool.cpp"]),
+        CppExtension("left_pool", [libdir+"/src/left_pool.cpp"]),
+        CppExtension("right_pool", [libdir+"/src/right_pool.cpp"])
     ],
     cmdclass={
         "build_ext": BuildExtension
