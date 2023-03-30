@@ -13,10 +13,8 @@ os.system(f"python {libdir}/setup.py build_ext --inplace")
 def load_lib(libname):
     #libdir = os.path.dirname(__file__)
     #libpath = os.path.join(libdir, libname)
-    temp = os.listdir()
-    raise Exception(f"files available:{temp}")
-    #libpath = libname
-#    return ctypes.cdll.LoadLibrary(libpath)
+    libpath = libname
+    return ctypes.cdll.LoadLibrary(libpath)
 
 top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
 bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
