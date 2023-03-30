@@ -16,10 +16,10 @@ def load_lib(libname):
     libpath = libname
     return ctypes.cdll.LoadLibrary(libpath)
 
-top_pool = load_lib('top_pool.cpython-36m-x86_64-linux-gnu.so')
-bottom_pool = load_lib('bottom_pool.cpython-36m-x86_64-linux-gnu.so')
-left_pool = load_lib('left_pool.cpython-36m-x86_64-linux-gnu.so')
-right_pool = load_lib('right_pool.cpython-36m-x86_64-linux-gnu.so')
+top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
+bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
+left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
+right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
 
 class TopPoolFunction(Function):
     @staticmethod
