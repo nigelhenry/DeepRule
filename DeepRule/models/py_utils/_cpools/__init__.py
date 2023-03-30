@@ -13,6 +13,7 @@ os.system(f"python {libdir}/setup.py build_ext --inplace")
 def load_lib(libname):
     #libdir = os.path.dirname(__file__)
     #libpath = os.path.join(libdir, libname)
+    libpath = libname
     return ctypes.cdll.LoadLibrary(libpath)
 
 top_pool = load_lib('top_pool.cpython-36m-x86_64-linux-gnu.so')
