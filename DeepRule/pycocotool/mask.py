@@ -3,7 +3,8 @@ __author__ = 'tsungyi'
 #import pycocotool._mask as _mask
 
 import os
-os.system("python setup.py build_ext --inplace")
+libdir = os.path.dir(__file__)
+os.system(f"python {libdir}/setup.py build_ext --inplace")
 
 def load_lib(libname):
     import os, ctypes
