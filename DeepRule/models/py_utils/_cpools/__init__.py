@@ -14,7 +14,7 @@ def load_lib(libname):
     #libdir = os.path.dirname(__file__)
     #libpath = os.path.join(libdir, libname)
     temp = os.listdir()
-    throw Exception(f"files available:{temp}")
+    raise Exception(f"files available:{temp}")
     #libpath = libname
 #    return ctypes.cdll.LoadLibrary(libpath)
 
