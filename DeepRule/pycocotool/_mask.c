@@ -616,7 +616,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include "numpy/arrayobject.h"
 #include "numpy/ufuncobject.h"
 #include <stdlib.h>
-#include "maskApi.h"
+/* #include "maskApi.h" */
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
