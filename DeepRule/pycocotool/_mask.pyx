@@ -27,6 +27,7 @@ np.import_array()
 cdef extern from "numpy/arrayobject.h":
     void PyArray_ENABLEFLAGS(np.ndarray arr, int flags)
 
+/*
 # Declare the prototype of the C functions in MaskApi.h
 cdef extern from "maskApi.h":
     ctypedef unsigned int uint
@@ -50,7 +51,8 @@ cdef extern from "maskApi.h":
     void rleFrPoly( RLE *R, const double *xy, siz k, siz h, siz w )
     char* rleToString( const RLE *R )
     void rleFrString( RLE *R, char *s, siz h, siz w )
-
+*/
+    
 # python class to wrap RLE array in C
 # the class handles the memory allocation and deallocation
 cdef class RLEs:
