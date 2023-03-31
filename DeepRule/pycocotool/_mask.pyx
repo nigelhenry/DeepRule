@@ -28,29 +28,29 @@ cdef extern from "numpy/arrayobject.h":
     void PyArray_ENABLEFLAGS(np.ndarray arr, int flags)
 
 
-## Declare the prototype of the C functions in MaskApi.h
-#cdef extern from "maskApi.h":
-#    ctypedef unsigned int uint
-#    ctypedef unsigned long siz
-#    ctypedef unsigned char byte
-#    ctypedef double* BB
-#    ctypedef struct RLE:
-#        siz h,
-#        siz w,
-#        siz m,
-#        uint* cnts,
-#    void rlesInit( RLE **R, siz n )
-#    void rleEncode( RLE *R, const byte *M, siz h, siz w, siz n )
-#    void rleDecode( const RLE *R, byte *mask, siz n )
-#    void rleMerge( const RLE *R, RLE *M, siz n, int intersect )
-#    void rleArea( const RLE *R, siz n, uint *a )
-#    void rleIou( RLE *dt, RLE *gt, siz m, siz n, byte *iscrowd, double *o )
-#    void bbIou( BB dt, BB gt, siz m, siz n, byte *iscrowd, double *o )
-#    void rleToBbox( const RLE *R, BB bb, siz n )
-#    void rleFrBbox( RLE *R, const BB bb, siz h, siz w, siz n )
-#    void rleFrPoly( RLE *R, const double *xy, siz k, siz h, siz w )
-#    char* rleToString( const RLE *R )
-#    void rleFrString( RLE *R, char *s, siz h, siz w )
+# Declare the prototype of the C functions in MaskApi.h
+cdef extern from "maskApi.h":
+    ctypedef unsigned int uint
+    ctypedef unsigned long siz
+    ctypedef unsigned char byte
+    ctypedef double* BB
+    ctypedef struct RLE:
+        siz h,
+        siz w,
+        siz m,
+        uint* cnts,
+    void rlesInit( RLE **R, siz n )
+    void rleEncode( RLE *R, const byte *M, siz h, siz w, siz n )
+    void rleDecode( const RLE *R, byte *mask, siz n )
+    void rleMerge( const RLE *R, RLE *M, siz n, int intersect )
+    void rleArea( const RLE *R, siz n, uint *a )
+    void rleIou( RLE *dt, RLE *gt, siz m, siz n, byte *iscrowd, double *o )
+    void bbIou( BB dt, BB gt, siz m, siz n, byte *iscrowd, double *o )
+    void rleToBbox( const RLE *R, BB bb, siz n )
+    void rleFrBbox( RLE *R, const BB bb, siz h, siz w, siz n )
+    void rleFrPoly( RLE *R, const double *xy, siz k, siz h, siz w )
+    char* rleToString( const RLE *R )
+    void rleFrString( RLE *R, char *s, siz h, siz w )
 
     
 # python class to wrap RLE array in C
