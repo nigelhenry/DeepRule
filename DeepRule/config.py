@@ -26,11 +26,11 @@ class Config:
         self._configs["chunk_sizes"]       = None
 
         # Directories
-        self._configs["data_dir"]   = "./data"
+        self._configs["data_dir"]   = os.path.dirname(__file__)+"/data"
         self._configs["cache_dir"]  = self._configs["data_dir"] + "/cache/"
         
-        self._configs["config_dir"] = os.path.dir(__file__)+"/config"
-        self._configs["result_dir"] = "./results"
+        self._configs["config_dir"] = os.path.dirname(__file__)+"/config"
+        self._configs["result_dir"] = os.path.dirname(__file__)+"/results"
         self._configs["tar_data_dir"] = 'cls'
 
         # Split
