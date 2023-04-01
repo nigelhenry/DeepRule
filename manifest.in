@@ -1,2 +1,3 @@
 include models/py_utils/_cpools/src/*.cpp
+include models/py_utils/_cpools/*.so
 include config/*.json
