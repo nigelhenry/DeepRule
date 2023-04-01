@@ -17,7 +17,7 @@ libdir = os.path.dirname(__file__)
 
 import imp
 def load_lib(name, path):
-    return imp.load_dynamic(name, os.path.join(os.path.dir("__file__",path)))
+    return imp.load_dynamic(name, os.path.join(os.path.dirname("__file__",path)))
 
 top_pool = load_lib('top_pool','top_pool.cpython-37m-x86_64-linux-gnu.so')
 bottom_pool = load_lib('bottom_pool','bottom_pool.cpython-37m-x86_64-linux-gnu.so')
