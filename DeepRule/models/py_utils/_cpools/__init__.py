@@ -6,20 +6,23 @@ from torch.autograd import Function
 
 import os
 libdir = os.path.dirname(__file__)
-os.system(f"python {libdir}/setup.py build_ext --inplace")
+#os.system(f"python {libdir}/setup.py build_ext --inplace")
 
-def load_lib(libname):
-    import os, ctypes
-    #libdir = os.path.dirname(__file__)
-    libdir = "."
-    libpath = os.path.join(libdir, libname)
-    return ctypes.cdll.LoadLibrary("./"+libpath)
+#def load_lib(libname):
+#    import os, ctypes
+#    #libdir = os.path.dirname(__file__)
+#    libdir = "."
+#    libpath = os.path.join(libdir, libname)
+#    return ctypes.cdll.LoadLibrary("./"+libpath)
 
+import imp
+def load_lib(name, path):
+    return imp.load_dynamic(name, os.path.join(os.path.dir("__file__",path)))
 
-top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
-bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
-left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
-right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
+top_pool = load_lib('top_pool','top_pool.cpython-37m-x86_64-linux-gnu.so')
+bottom_pool = load_lib('bottom_pool','bottom_pool.cpython-37m-x86_64-linux-gnu.so')
+left_pool = load_lib('left_pool','left_pool.cpython-37m-x86_64-linux-gnu.so')
+right_pool = load_lib('right_pool',right_pool.cpython-37m-x86_64-linux-gnu.so')
 
 class TopPoolFunction(Function):
     @staticmethod
