@@ -28,7 +28,8 @@ class Config:
         # Directories
         self._configs["data_dir"]   = "./data"
         self._configs["cache_dir"]  = self._configs["data_dir"] + "/cache/"
-        self._configs["config_dir"] = "./config"
+        
+        self._configs["config_dir"] = os.path.dir(__file__)+"/config"
         self._configs["result_dir"] = "./results"
         self._configs["tar_data_dir"] = 'cls'
 
