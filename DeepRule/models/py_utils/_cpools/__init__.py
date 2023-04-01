@@ -19,10 +19,10 @@ import imp
 def load_lib(name, path):
     return imp.load_dynamic(name, os.path.join(os.path.dirname(__file__),path))
 
-top_pool = load_lib('top_pool','top_pool.cpython-37m-x86_64-linux-gnu.so')
-bottom_pool = load_lib('bottom_pool','bottom_pool.cpython-37m-x86_64-linux-gnu.so')
-left_pool = load_lib('left_pool','left_pool.cpython-37m-x86_64-linux-gnu.so')
-right_pool = load_lib('right_pool','right_pool.cpython-37m-x86_64-linux-gnu.so')
+top_pool = load_lib('top_pool','top_pool.cpython-36m-x86_64-linux-gnu.so')
+bottom_pool = load_lib('bottom_pool','bottom_pool.cpython-36m-x86_64-linux-gnu.so')
+left_pool = load_lib('left_pool','left_pool.cpython-36m-x86_64-linux-gnu.so')
+right_pool = load_lib('right_pool','right_pool.cpython-36m-x86_64-linux-gnu.so')
 
 class TopPoolFunction(Function):
     @staticmethod
