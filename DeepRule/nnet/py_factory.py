@@ -39,6 +39,7 @@ class NetworkFactory(): #object):
         
         libdir = os.path.dirname(__file__)
         module_file = os.path.join(libdir, "..", module_file) 
+        print(module_file)
         nnet_module = importlib.import_module(module_file)
 
         self.model   = DummyModule(nnet_module.model()) #db))
