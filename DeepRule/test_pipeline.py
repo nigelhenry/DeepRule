@@ -76,9 +76,9 @@ def load_net(testiter, cfg_name, data_dir, cache_dir, result_dir, cuda_id=0):
     test_iter = system_configs.max_iter if testiter is None else testiter
     print("loading parameters at iteration: {}".format(test_iter))
     dataset = system_configs.dataset
-    db = datasets[dataset](configs["db"], split)
+    #db = datasets[dataset](configs["db"], split)
     print("building neural network...")
-    nnet = NetworkFactory(db)
+    nnet = NetworkFactory() #db)
     print("loading parameters...")
     nnet.load_params(test_iter)
     if torch.cuda.is_available():
