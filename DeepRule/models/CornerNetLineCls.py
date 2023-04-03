@@ -65,7 +65,7 @@ def make_hg_layer(kernel, dim0, dim1, mod, layer=convolution, **kwargs):
     return nn.Sequential(*layers)
 
 class model(kp_pure_line_cls):
-    def __init__(self, db):
+    def __init__(self): #, db):
         n       = 5
         dims    = [256, 256, 384, 384, 384, 512]
         modules = [2, 2, 2, 2, 2, 4]
