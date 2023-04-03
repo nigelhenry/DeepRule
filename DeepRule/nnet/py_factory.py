@@ -34,7 +34,7 @@ class NetworkFactory(): #object):
     def __init__(self): #, db):
         super(NetworkFactory, self).__init__()
 
-        module_file = "models.{}".format(system_configs.snapshot_name)
+        module_file = ".models.{}".format(system_configs.snapshot_name)
         print("module_file: {}".format(module_file))
         nnet_module = importlib.import_module(module_file, __name__)
 
