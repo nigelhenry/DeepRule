@@ -115,10 +115,11 @@ class Config:
 
     @property
     def snapshot_dir(self):
-        snapshot_dir = os.path.join("/kaggle/working/nnet", self.snapshot_name)
+        #snapshot_dir = os.path.join(self.cache_dir, "nnet", self.snapshot_name)
+        snapshot_dir = self.cache_dir
 
-        if not os.path.exists(snapshot_dir):
-            os.makedirs(snapshot_dir)
+        #if not os.path.exists(snapshot_dir):
+        #    os.makedirs(snapshot_dir)
 
         return snapshot_dir
 
