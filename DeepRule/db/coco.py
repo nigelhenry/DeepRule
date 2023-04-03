@@ -62,11 +62,11 @@ class MSCOCO(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "coco_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "coco_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         print("loading from cache file: {}".format(self._cache_file))
@@ -275,11 +275,11 @@ class Pie(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "pie_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "pie_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
@@ -488,11 +488,11 @@ class Line(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "line_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "line_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
@@ -707,11 +707,11 @@ class LineCls(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "line_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "line_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
@@ -913,11 +913,11 @@ class LineClsReal(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "line_real_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "line_real_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
@@ -1119,11 +1119,11 @@ class Bar(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "chart_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "chart_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
@@ -1334,11 +1334,11 @@ class Cls(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "cls_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "cls_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
@@ -1561,11 +1561,11 @@ class SKU(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "sku_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "sku_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         print("loading from cache file: {}".format(self._cache_file))
@@ -1753,11 +1753,11 @@ class Chart(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "chart_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "chart_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
@@ -1968,11 +1968,11 @@ class ChartXY(DETECTION):
             value: key for key, value in self._classes.items()
         }
 
-        self._cache_file = os.path.join(cache_dir, "chart_{}.pkl".format(self._dataset))
-        self._load_data()
-        self._db_inds = np.arange(len(self._image_ids))
+        #self._cache_file = os.path.join(cache_dir, "chart_{}.pkl".format(self._dataset))
+        #self._load_data()
+        #self._db_inds = np.arange(len(self._image_ids))
 
-        self._load_coco_data()
+        #self._load_coco_data()
 
     def _load_data(self):
         if not os.path.exists("./cache"):
