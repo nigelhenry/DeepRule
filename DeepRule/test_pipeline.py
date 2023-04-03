@@ -84,7 +84,8 @@ def load_net(testiter, cfg_name, data_dir, cache_dir, result_dir, cuda_id=0):
     if torch.cuda.is_available():
         nnet.cuda(cuda_id)
     nnet.eval_mode()
-    return db, nnet
+    #return db, nnet
+    return nnet
 
 def Pre_load_nets():
     methods = {}
