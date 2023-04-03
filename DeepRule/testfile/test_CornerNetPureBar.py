@@ -5,8 +5,8 @@ import numpy as np
 import torch
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-from config import system_configs
-from utils import crop_image, normalize_
+from ..config import system_configs
+from ..utils import crop_image, normalize_
 import external.nms as nms
 
 def _rescale_points(dets, ratios, borders, sizes):
