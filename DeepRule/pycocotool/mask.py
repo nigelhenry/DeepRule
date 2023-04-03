@@ -1,8 +1,14 @@
 __author__ = 'tsungyi'
 
 #import pycocotool._mask as _mask
-import imp
-_mask = imp.load_dynamic("_mask","/kaggle/input/testing/_mask.cpython-36m-x86_64-linux-gnu.so")
+
+def load_lib(libname):
+    import os, ctypes
+    #libdir = os.path.dirname(__file__)
+    libdir = "."
+    libpath = os.path.join(libdir, libname)
+    return ctypes.cdll.LoadLibrary(libpath)
+_mask = load_lib("_mask.cpython-36m-x86_64-linux-gnu.so")
 
 # Interface for manipulating masks stored in RLE format.
 #
