@@ -89,34 +89,27 @@ def load_net(testiter, cfg_name, data_dir, cache_dir, result_dir, cuda_id=0):
 
 def Pre_load_nets():
     methods = {}
-    db_cls, nnet_cls = load_net(50000, "CornerNetCls", "data/clsdata(1031)", "/kaggle/input/chartocr2",
-                                "data/clsdata(1031)/result")
-
+    nnet_cls = load_net(50000, "CornerNetCls", "data/clsdata(1031)", "/kaggle/input/chartocr2", "data/clsdata(1031)/result")
     from testfile.test_line_cls_pure_real import testing
     path = 'testfile.test_%s' % "CornerNetCls"
     testing_cls = importlib.import_module(path).testing
-    methods['Cls'] = [db_cls, nnet_cls, testing_cls]
-    db_bar, nnet_bar = load_net(50000, "CornerNetPureBar", "data/bardata(1031)", "/kaggle/input/chartocr2",
-                                "data/bardata(1031)/result")
+    methods['Cls'] = [None, nnet_cls, testing_cls]
+    nnet_bar = load_net(50000, "CornerNetPureBar", "data/bardata(1031)", "/kaggle/input/chartocr2", "data/bardata(1031)/result")
     path = 'testfile.test_%s' % "CornerNetPureBar"
     testing_bar = importlib.import_module(path).testing
-    methods['Bar'] = [db_bar, nnet_bar, testing_bar]
-    db_pie, nnet_pie = load_net(50000, "CornerNetPurePie", "data/piedata(1008)", "/kaggle/input/chartocr2",
-                                "data/piedata(1008)/result")
+    methods['Bar'] = [None, nnet_bar, testing_bar]
+    nnet_pie = load_net(50000, "CornerNetPurePie", "data/piedata(1008)", "/kaggle/input/chartocr2", "data/piedata(1008)/result")
     path = 'testfile.test_%s' % "CornerNetPurePie"
     testing_pie = importlib.import_module(path).testing
-    methods['Pie'] = [db_pie, nnet_pie, testing_pie]
-    db_line, nnet_line = load_net(50000, "CornerNetLine", "data/linedata(1028)", "/kaggle/input/chartocr2",
-                                  "data/linedata(1028)/result")
+    methods['Pie'] = [None, nnet_pie, testing_pie]
+    nnet_line = load_net(50000, "CornerNetLine", "data/linedata(1028)", "/kaggle/input/chartocr2", "data/linedata(1028)/result")
     path = 'testfile.test_%s' % "CornerNetLine"
     testing_line = importlib.import_module(path).testing
-    methods['Line'] = [db_line, nnet_line, testing_line]
-    db_line_cls, nnet_line_cls = load_net(20000, "CornerNetLineClsReal", "data/linedata(1028)",
-                                          "/kaggle/input/chartocr2",
-                                          "data/linedata(1028)/result")
+    methods['Line'] = [None, nnet_line, testing_line]
+    nnet_line_cls = load_net(20000, "CornerNetLineClsReal", "data/linedata(1028)", "/kaggle/input/chartocr2", "data/linedata(1028)/result")
     path = 'testfile.test_%s' % "CornerNetLineCls"
     testing_line_cls = importlib.import_module(path).testing
-    methods['LineCls'] = [db_line_cls, nnet_line_cls, testing_line_cls]
+    methods['LineCls'] = [None, nnet_line_cls, testing_line_cls]
     return methods
 methods = Pre_load_nets()
 
