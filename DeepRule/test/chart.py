@@ -5,8 +5,8 @@ import numpy as np
 import torch
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-from config import system_configs
-from utils import crop_image, normalize_
+from ..config import system_configs
+from ..utils import crop_image, normalize_
 import sys
 sys.path.append("D:\\site-packages\\")
 import external.nms as nms
