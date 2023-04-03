@@ -5,7 +5,7 @@ import numpy as np
 import torch
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-from config import system_configs
+from ..config import system_configs
 import math
 import external.nms as nms
 
