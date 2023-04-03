@@ -8,5 +8,5 @@ setup(
                        "pycocotool/*.so",
                       "config/*.json"]},
     include_package_data=True,
-    install_requires = ["azureml"]
+    install_requires = ["azureml.core"]
 )
