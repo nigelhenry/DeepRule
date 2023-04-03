@@ -7,5 +7,6 @@ setup(
                        "models/py_utils/_cpools/*.so",
                        "pycocotool/*.so",
                       "config/*.json"]},
-    include_package_data=True
+    include_package_data=True,
+    install_required = ["azureml"]
 )
