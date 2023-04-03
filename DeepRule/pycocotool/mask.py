@@ -3,10 +3,11 @@ __author__ = 'tsungyi'
 #import pycocotool._mask as _mask
 
 def load_lib(libname):
-    import os, ctypes
+    import os, ctypes, imp
     libdir = os.path.dirname(__file__)
     libpath = os.path.join(libdir, libname)
-    return ctypes.cdll.LoadLibrary(libpath)
+    #return ctypes.cdll.LoadLibrary(libpath)
+    return imp.load_dynamic("_mask", libpath)
 _mask = load_lib("_mask.cpython-36m-x86_64-linux-gnu.so")
 
 # Interface for manipulating masks stored in RLE format.
