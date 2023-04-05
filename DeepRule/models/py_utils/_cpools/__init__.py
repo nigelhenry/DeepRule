@@ -2,24 +2,7 @@ import torch
 
 from torch import nn
 from torch.autograd import Function
-#from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
-
-## recompile the cython .so files
-import os
-libdir = os.path.dirname(__file__)
-os.system(f"python {libdir}/setup.py build_ext --inplace")
-
-def load_lib(libname):
-    import os, ctypes
-    #libdir = os.path.dirname(__file__)
-    libdir = "."
-    libpath = os.path.join(libdir, libname)
-    return ctypes.cdll.LoadLibrary("./"+libpath)
-
-top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
-bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
-left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
-right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
+from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
 
 class TopPoolFunction(Function):
     @staticmethod
