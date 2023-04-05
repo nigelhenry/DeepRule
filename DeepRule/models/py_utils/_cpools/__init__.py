@@ -3,7 +3,7 @@ import torch
 from torch import nn
 from torch.autograd import Function
 #from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
-import .top_pool, .bottom_pool, .left_pool, .right_pool
+from . import top_pool, bottom_pool, left_pool, right_pool
 
 class TopPoolFunction(Function):
     @staticmethod
