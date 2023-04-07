@@ -19,10 +19,11 @@ from torch.autograd import Function
 #right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
 
 import torch.utils.cpp_extension
-top_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/top_pool.cpp"])
-bottom_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/bottom_pool.cpp"])
-left_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/left_pool.cpp"])
-right_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/right_pool.cpp"])
+libdir = os.path.dirname(__file__)
+top_pool = torch.utils.cpp_extension.load(name="top_pool", sources=[libdir+"/src/top_pool.cpp"])
+bottom_pool = torch.utils.cpp_extension.load(name="top_pool", sources=[libdir+"/src/bottom_pool.cpp"])
+left_pool = torch.utils.cpp_extension.load(name="top_pool", sources=[libdir+"/src/left_pool.cpp"])
+right_pool = torch.utils.cpp_extension.load(name="top_pool", sources=[libdir+"/src/right_pool.cpp"])
 
 class TopPoolFunction(Function):
     @staticmethod
