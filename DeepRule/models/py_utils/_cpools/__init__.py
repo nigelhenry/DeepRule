@@ -18,7 +18,7 @@ from torch.autograd import Function
 #left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
 #right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
 
-import torch.utils.cpp_extension
+import os, torch.utils.cpp_extension
 libdir = os.path.dirname(__file__)
 top_pool = torch.utils.cpp_extension.load(name="top_pool", sources=[libdir+"/src/top_pool.cpp"])
 bottom_pool = torch.utils.cpp_extension.load(name="top_pool", sources=[libdir+"/src/bottom_pool.cpp"])
