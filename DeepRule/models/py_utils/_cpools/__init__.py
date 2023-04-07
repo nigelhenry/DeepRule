@@ -4,19 +4,25 @@ from torch import nn
 from torch.autograd import Function
 #from models.py_utils._cpools import top_pool, bottom_pool, left_pool, right_pool
 
-os.system(f"python {libdir}/setup.py build_ext --inplace")
+#os.system(f"python {libdir}/setup.py build_ext --inplace")
 
-def load_lib(libname):
-    import os, ctypes
-    #libdir = os.path.dirname(__file__)
-    libdir = "."
-    libpath = os.path.join(libdir, libname)
-    return ctypes.cdll.LoadLibrary("./"+libpath)
+#def load_lib(libname):
+#    import os, ctypes
+#    #libdir = os.path.dirname(__file__)
+#    libdir = "."
+#    libpath = os.path.join(libdir, libname)
+#    return ctypes.cdll.LoadLibrary("./"+libpath)
 
-top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
-bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
-left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
-right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
+#top_pool = load_lib('top_pool.cpython-37m-x86_64-linux-gnu.so')
+#bottom_pool = load_lib('bottom_pool.cpython-37m-x86_64-linux-gnu.so')
+#left_pool = load_lib('left_pool.cpython-37m-x86_64-linux-gnu.so')
+#right_pool = load_lib('right_pool.cpython-37m-x86_64-linux-gnu.so')
+
+import torch.utils.cpp_extension
+top_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/top_pool.cpp"])
+bottom_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/bottom_pool.cpp"])
+left_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/left_pool.cpp"])
+right_pool = torch.utils.cpp_extension.load(name="top_pool", sources=["./src/right_pool.cpp"])
 
 class TopPoolFunction(Function):
     @staticmethod
