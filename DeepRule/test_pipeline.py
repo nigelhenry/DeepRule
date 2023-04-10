@@ -258,7 +258,7 @@ def test(image_path, debug=False, suffix=None, min_value_official=None, max_valu
             return plot_area, image_painted, pie_data, chartinfo
         if info['data_type'] == 1:
             print("Predicted as LineChart")
-            results = methods['Line'][2](image, methods['Line'][0], methods['Line'][1], debug=False, cuda_id=1)
+            results = methods['Line'][2](image, methods['Line'][0], methods['Line'][1], debug=False) #, cuda_id=1)
             keys = results[0]
             hybrids = results[1]
             if 5 in cls_info.keys():
@@ -267,7 +267,7 @@ def test(image_path, debug=False, suffix=None, min_value_official=None, max_valu
                 plot_area = [0, 0, 600, 400]
             print(min_value, max_value)
             image_painted, quiry, keys, hybrids = GroupQuiry(image_painted, keys, hybrids, plot_area, min_value, max_value)
-            results = methods['LineCls'][2](image, methods['LineCls'][0], quiry, methods['LineCls'][1], debug=False, cuda_id=1)
+            results = methods['LineCls'][2](image, methods['LineCls'][0], quiry, methods['LineCls'][1], debug=False) #, cuda_id=1)
             line_data = GroupLine(image_painted, keys, hybrids, plot_area, results, min_value, max_value)
             return plot_area, image_painted, line_data, chartinfo
 
